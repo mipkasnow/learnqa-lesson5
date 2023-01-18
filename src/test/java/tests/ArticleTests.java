@@ -2,13 +2,13 @@ package tests;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import page.SearchArticlePage;
+import page.InitPage;
 
 import static helpers.Wrapper.elementByXpathTextContains;
 
 public class ArticleTests extends BaseTest {
 
-    private final SearchArticlePage articlePage = new SearchArticlePage();
+    private final InitPage initPage = new InitPage();
 
     @BeforeEach
     public void skipFirstPage() {
@@ -17,7 +17,7 @@ public class ArticleTests extends BaseTest {
 
     @Test
     public void searchArticlesAndClearTest() {
-        articlePage.waitUntilLoaded().clickInputToOpenSearchField().setArticleSearchValue("Warhammer")
+        initPage.waitUntilLoaded().clickInputToOpenSearchField().setArticleSearchValue("Warhammer")
                 .checkThatSearchResultsAreNotEmpty().clearSearchResults().checkThatSearchResultsAreEmpty();
     }
 }

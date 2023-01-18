@@ -12,19 +12,14 @@ import static helpers.Wrapper.*;
 public class SearchArticlePage implements WaitLoadingPage<SearchArticlePage> {
 
     private final SelenideElement inputSearchActivator = elementByXpathTextContains("Search Wikipedia");
-    private final SelenideElement inputSearch =  elementByIdWiki("search_src_text");
+    private final SelenideElement inputSearch = elementByIdWiki("search_src_text");
     private final SelenideElement clearQueryBtn = elementByIdWiki("search_close_btn");
     private final ElementsCollection searchTitles = elementsByIdWiki("page_list_item_title");
+    private final SelenideElement searchContainer = elementByIdWiki("fragment_search_results");
 
     @Override
     public SearchArticlePage waitUntilLoaded() {
-        inputSearchActivator.should(appear);
-        return this;
-    }
-
-    public SearchArticlePage clickInputToOpenSearchField() {
-        inputSearchActivator.click();
-        inputSearch.should(appear);
+        searchContainer.should(appear);
         return this;
     }
 
@@ -48,5 +43,10 @@ public class SearchArticlePage implements WaitLoadingPage<SearchArticlePage> {
     public SearchArticlePage checkThatSearchResultsAreEmpty() {
         searchTitles.shouldHave(size(0));
         return this;
+    }
+
+    public ArticlePage openArticleWithTitleName(String titleName) {
+        elementByIdWikiAndContainsText("page_list_item_title", titleName).click();
+        return new ArticlePage().waitUntilLoaded();
     }
 }

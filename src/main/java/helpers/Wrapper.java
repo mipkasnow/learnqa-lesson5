@@ -11,9 +11,6 @@ public class Wrapper {
 
     public static SelenideElement elementByIdWiki(String id) {return $(By.id("org.wikipedia:id/" + id));}
 
-    public static SelenideElement elementById(String id) {
-        return $(By.id(id));
-    }
 
     public static SelenideElement elementByAccessibilityId(String id) {
         return $(AppiumBy.accessibilityId(id));
@@ -25,5 +22,13 @@ public class Wrapper {
 
     public static SelenideElement elementByXpath(String xpath) {
         return $x(xpath);
+    }
+
+    public static SelenideElement elementByIdWikiAndContainsText(String id, String text){
+        return $x("//*[contains(@text, '" + text + "') and @resource-id='org.wikipedia:id/" + id + "']");
+    }
+
+    public static SelenideElement elementByContentDesc(String id){
+        return $x("//*[contains(@content-desc,'" + id + "')]");
     }
 }
