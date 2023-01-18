@@ -33,4 +33,21 @@ public class ArticleTests extends BaseTest {
 
         new CustomAssert().assertElementPresent(articleTitleLocator);
     }
+
+    @Test
+    public void searchViaTitleAndDescriptionTest() {
+        var firstTitle = "Cyberpunk";
+        var secondTitle = "Cyberpunk 2077";
+        var thirdTitle = "Cyberpunk: Edgerunners";
+
+        var firstDescription = "Postmodern science fiction genre in a futuristic dystopian setting";
+        var secondDescription = "2020 video game";
+        var thordDescription = "2022 anime web series";
+
+        initPage.waitUntilLoaded().clickInputToOpenSearchField().setArticleSearchValue(firstTitle)
+                .checkThatSearchResultsAreGreaterThan2().waitForElementByTitleAndDescription(firstTitle, firstDescription)
+                .waitForElementByTitleAndDescription(secondTitle, secondDescription)
+                .waitForElementByTitleAndDescription(thirdTitle, thordDescription);
+
+    }
 }

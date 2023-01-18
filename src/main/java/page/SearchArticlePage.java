@@ -7,6 +7,7 @@ import helpers.WaitLoadingPage;
 import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.appear;
+import static com.codeborne.selenide.Selenide.$x;
 import static helpers.Wrapper.*;
 
 public class SearchArticlePage implements WaitLoadingPage<SearchArticlePage> {
@@ -16,6 +17,8 @@ public class SearchArticlePage implements WaitLoadingPage<SearchArticlePage> {
     private final SelenideElement clearQueryBtn = elementByIdWiki("search_close_btn");
     private final ElementsCollection searchTitles = elementsByIdWiki("page_list_item_title");
     private final SelenideElement searchContainer = elementByIdWiki("fragment_search_results");
+
+    private String titleAndDescriptionXpath = "//*[@text='title']/following-sibling::*[@text='description']";
 
     @Override
     public SearchArticlePage waitUntilLoaded() {
@@ -45,8 +48,19 @@ public class SearchArticlePage implements WaitLoadingPage<SearchArticlePage> {
         return this;
     }
 
+    public SearchArticlePage checkThatSearchResultsAreGreaterThan2() {
+        searchTitles.shouldHave(sizeGreaterThan(2));
+        return this;
+    }
+
     public ArticlePage openArticleWithTitleName(String titleName) {
         elementByIdWikiAndContainsText("page_list_item_title", titleName).click();
         return new ArticlePage().waitUntilLoaded();
+    }
+
+    public SearchArticlePage waitForElementByTitleAndDescription(String title, String description) {
+        var xPath = titleAndDescriptionXpath.replace("title", title).replace("description", description);
+        $x(xPath).should(appear);
+        return this;
     }
 }
