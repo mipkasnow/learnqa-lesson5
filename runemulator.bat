@@ -1,1 +1,1 @@
-emulator @Pixel5
+emulator @Pixel5 &
