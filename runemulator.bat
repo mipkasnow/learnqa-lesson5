@@ -1,1 +1,1 @@
-start emulator @Pixel5 &
+start emulator @Pixel5 & adb wait-for-device
