@@ -1,1 +1,1 @@
-emulator @Pixel5 &
+start emulator @Pixel5 &
