@@ -1,9 +1,9 @@
 package android.tests;
 
 import adnroid.helpers.CustomAssert;
+import adnroid.page.InitPage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import adnroid.page.InitPage;
 
 import static adnroid.helpers.Wrapper.elementByXpath;
 import static adnroid.helpers.Wrapper.elementByXpathTextContains;

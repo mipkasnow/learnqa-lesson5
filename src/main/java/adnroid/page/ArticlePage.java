@@ -1,10 +1,10 @@
 package adnroid.page;
 
-import com.codeborne.selenide.SelenideElement;
 import adnroid.helpers.WaitLoadingPage;
+import com.codeborne.selenide.SelenideElement;
 
-import static com.codeborne.selenide.Condition.*;
 import static adnroid.helpers.Wrapper.*;
+import static com.codeborne.selenide.Condition.*;
 
 public class ArticlePage implements WaitLoadingPage<ArticlePage> {
 

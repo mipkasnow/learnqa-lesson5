@@ -9,7 +9,8 @@ repositories {
 def selenideAppiumVersion = "2.3.1",
     junitVersion = "5.9.0",
     slf4jVersion = '2.0.3',
-    assertJVersion = "3.23.1"
+    assertJVersion = "3.23.1",
+    ownerVersion = "1.0.12"
 
 dependencies {
     implementation(
@@ -17,6 +18,7 @@ dependencies {
             "org.assertj:assertj-core:$assertJVersion",
             "org.junit.jupiter:junit-jupiter:$junitVersion",
             "org.slf4j:slf4j-simple:$slf4jVersion",
+            "org.aeonbits.owner:owner:$ownerVersion"
     )
 }
 
