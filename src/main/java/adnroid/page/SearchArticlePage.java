@@ -1,14 +1,14 @@
-package page;
+package adnroid.page;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import helpers.WaitLoadingPage;
+import adnroid.helpers.WaitLoadingPage;
 
 import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Selenide.$x;
-import static helpers.Wrapper.*;
+import static adnroid.helpers.Wrapper.*;
 
 public class SearchArticlePage implements WaitLoadingPage<SearchArticlePage> {
 

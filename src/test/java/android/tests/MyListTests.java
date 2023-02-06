@@ -1,10 +1,10 @@
-package tests;
+package android.tests;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import page.InitPage;
+import adnroid.page.InitPage;
 
-import static helpers.Wrapper.elementByXpathTextContains;
+import static adnroid.helpers.Wrapper.elementByXpathTextContains;
 
 public class MyListTests extends BaseTest{
 

@@ -1,11 +1,11 @@
-package helpers;
+package adnroid.helpers;
 
 
 import com.codeborne.selenide.SelenideElement;
 import io.appium.java_client.TouchAction;
 
 import static com.codeborne.selenide.Condition.appear;
-import static driver_manage.DriverContainer.driver;
+import static adnroid.driver_manage.DriverContainer.driver;
 import static io.appium.java_client.touch.WaitOptions.waitOptions;
 import static io.appium.java_client.touch.offset.PointOption.point;
 import static java.time.Duration.ofMillis;

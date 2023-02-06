@@ -1,4 +1,4 @@
-package driver_manage;
+package adnroid.driver_manage;
 
 import com.codeborne.selenide.WebDriverProvider;
 import io.appium.java_client.android.AndroidDriver;
@@ -11,8 +11,6 @@ import org.openqa.selenium.WebDriver;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
-
-import static driver_manage.DriverContainer.driver;
 
 public class MyAppiumDriver implements WebDriverProvider {
 
@@ -40,8 +38,8 @@ public class MyAppiumDriver implements WebDriverProvider {
         options.setNoReset(false);
         options.setOrientation(ScreenOrientation.PORTRAIT);
 
-        driver = new AndroidDriver(getAppiumServerUrl(), options);
-        return driver;
+        DriverContainer.driver = new AndroidDriver(getAppiumServerUrl(), options);
+        return DriverContainer.driver;
     }
 
     private File getApp() {return new File("src/test/resources/apks/org.wikipedia.apk");}

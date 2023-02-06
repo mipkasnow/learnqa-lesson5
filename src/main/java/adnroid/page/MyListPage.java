@@ -1,12 +1,12 @@
-package page;
+package adnroid.page;
 
 import com.codeborne.selenide.SelenideElement;
-import helpers.Swiper;
-import helpers.WaitLoadingPage;
+import adnroid.helpers.Swiper;
+import adnroid.helpers.WaitLoadingPage;
 
 import static com.codeborne.selenide.Condition.appear;
-import static helpers.Wrapper.elementByIdWiki;
-import static helpers.Wrapper.elementByXpathTextContains;
+import static adnroid.helpers.Wrapper.elementByIdWiki;
+import static adnroid.helpers.Wrapper.elementByXpathTextContains;
 
 public class MyListPage implements WaitLoadingPage<MyListPage> {
 

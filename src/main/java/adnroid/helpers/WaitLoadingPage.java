@@ -1,4 +1,4 @@
-package helpers;
+package adnroid.helpers;
 
 public interface WaitLoadingPage <T>{
 

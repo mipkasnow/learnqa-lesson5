@@ -1,7 +1,7 @@
-package tests;
+package android.tests;
 
 import com.codeborne.selenide.Configuration;
-import driver_manage.MyAppiumDriver;
+import adnroid.driver_manage.MyAppiumDriver;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;

@@ -1,12 +1,12 @@
-package tests;
+package android.tests;
 
-import helpers.CustomAssert;
+import adnroid.helpers.CustomAssert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import page.InitPage;
+import adnroid.page.InitPage;
 
-import static helpers.Wrapper.elementByXpath;
-import static helpers.Wrapper.elementByXpathTextContains;
+import static adnroid.helpers.Wrapper.elementByXpath;
+import static adnroid.helpers.Wrapper.elementByXpathTextContains;
 
 public class ArticleTests extends BaseTest {
 
