@@ -42,5 +42,7 @@ public class MyAppiumDriver implements WebDriverProvider {
         return DriverContainer.driver;
     }
 
-    private File getApp() {return new File("src/test/resources/apks/org.wikipedia.apk");}
+    private File getApp() {
+        return new File("src/test/resources/apks/org.wikipedia.apk");
+    }
 }

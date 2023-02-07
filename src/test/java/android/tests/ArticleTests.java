@@ -2,12 +2,17 @@ package android.tests;
 
 import adnroid.helpers.CustomAssert;
 import adnroid.page.InitPage;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static adnroid.helpers.Wrapper.elementByXpath;
 import static adnroid.helpers.Wrapper.elementByXpathTextContains;
 
+@Epic("Android")
+@Feature("Article tests")
 public class ArticleTests extends BaseTest {
 
     private final InitPage initPage = new InitPage();
@@ -17,14 +22,16 @@ public class ArticleTests extends BaseTest {
         elementByXpathTextContains("SKIP").click();
     }
 
+    @DisplayName("Поиск статьи и очистка результата поиска")
     @Test
     public void searchArticlesAndClearTest() {
         initPage.waitUntilLoaded().clickInputToOpenSearchField().setArticleSearchValue("Warhammer")
                 .checkThatSearchResultsAreNotEmpty().clearSearchResults().checkThatSearchResultsAreEmpty();
     }
 
+    @DisplayName("Валидация заголовка статьи")
     @Test
-    public void checkThatArticleHasTitleTest(){
+    public void checkThatArticleHasTitleTest() {
         var articleTitleLocator = elementByXpath("//*[@resource-id='pcs-edit-section-title-description']" +
                 "/preceding-sibling::android.view.View");
 
@@ -34,6 +41,7 @@ public class ArticleTests extends BaseTest {
         new CustomAssert().assertElementPresent(articleTitleLocator);
     }
 
+    @DisplayName("Поиск статьи по совпадению заголовка и описания")
     @Test
     public void searchViaTitleAndDescriptionTest() {
         var firstTitle = "Cyberpunk";

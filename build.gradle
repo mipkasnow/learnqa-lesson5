@@ -1,5 +1,6 @@
 plugins {
     id 'java-library'
+    id "io.qameta.allure" version "2.10.0"
 }
 
 repositories {
@@ -10,7 +11,24 @@ def selenideAppiumVersion = "2.3.1",
     junitVersion = "5.9.0",
     slf4jVersion = '2.0.3',
     assertJVersion = "3.23.1",
-    ownerVersion = "1.0.12"
+    ownerVersion = "1.0.12",
+    allureVersion = "2.20.0"
+
+allure
+        {
+            report {
+                version.set(allureVersion)
+            }
+            adapter {
+                autoconfigure.set(true)
+                aspectjWeaver.set(true)
+                frameworks {
+                    junit5 {
+                        adapterVersion.set(allureVersion)
+                    }
+                }
+            }
+        }
 
 dependencies {
     implementation(
@@ -18,7 +36,10 @@ dependencies {
             "org.assertj:assertj-core:$assertJVersion",
             "org.junit.jupiter:junit-jupiter:$junitVersion",
             "org.slf4j:slf4j-simple:$slf4jVersion",
-            "org.aeonbits.owner:owner:$ownerVersion"
+            "org.aeonbits.owner:owner:$ownerVersion",
+            "io.qameta.allure:allure-selenide:$allureVersion",
+
+            'com.github.automatedowl:allure-environment-writer:1.0.0'
     )
 }
 

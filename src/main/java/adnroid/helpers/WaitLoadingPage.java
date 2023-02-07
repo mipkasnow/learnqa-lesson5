@@ -1,6 +1,6 @@
 package adnroid.helpers;
 
-public interface WaitLoadingPage <T>{
+public interface WaitLoadingPage<T> {
 
     T waitUntilLoaded();
 }
