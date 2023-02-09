@@ -1,2 +1,1 @@
-start emulator @Pixel5 & adb wait-for-device
-appium
+start emulator @Pixel5 & adb wait-for-device & appium
